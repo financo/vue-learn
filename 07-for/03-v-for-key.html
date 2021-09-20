@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h1>{{message}}</h1>
+  <ul>
+<!--    通过绑定key，优化渲染效率, 需要保证:key值当唯一性-->
+    <li v-for="i in letters" :key="i">
+      {{i}}
+    </li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello",
+      letters: ['A', 'B', 'C', 'D', 'E'],
+    }
+  })
+</script>
+
+</body>
+</html>

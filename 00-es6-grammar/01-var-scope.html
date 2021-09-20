@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+<script>
+  btns = document.getElementsByTagName("button");
+
+  // 错误用法
+  // for (var i = 0; i < btns.length; i++){
+  //   btns[i].addEventListener("click", function () {
+  //     console.log("the " + i + "st button is clicked!");
+  //   })
+  // }
+
+  // 正确用法, es6新语法 let
+  // for (let i = 0; i < btns.length; i++){
+  //   btns[i].addEventListener("click", function () {
+  //     console.log("the " + i + "st button is clicked!");
+  //   })
+  // }
+
+  // 正确用法
+  // for (var i = 0; i < btns.length; i++) {
+  //   (function (i) {
+  //     btns[i].addEventListener("click", function () {
+  //       console.log("the " + i + "st button is clicked!");
+  //     })
+  //   })(i)
+  // }
+
+  // 上边是这种方式的简写，定义函数后立即调用
+  for (var i = 0; i < btns.length; i++) {
+    function func (i){
+      btns[i].addEventListener("click", function () {
+        console.log("the " + i + "st button is clicked!");
+      })
+    }
+    func(i)
+  }
+</script>
+
+</body>
+</html>

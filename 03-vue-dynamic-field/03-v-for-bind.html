@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: aqua;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{message}}</h2>
+  <ul>
+    <li v-for="(m, i) in movies" :class="{active: i == current}" @click="click(i)">{{m}}</li>
+  </ul>
+  <br>
+  <ul>
+    <li v-for="(m, i) in movies" :class="{active: status[i]}" @click="doClick(i)">{{m}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello",
+      movies: ['中国合伙人', '变形金刚', '双狙人', '蜘蛛侠', '钢铁侠'],
+      current: -1,
+      status: [false, false, false, false, false]
+    },
+    methods: {
+      click: function (i) {
+        this.current = i
+      },
+      doClick: function (i) {
+        console.log(this.status);
+        this.$set(this.status, i, !this.status[i]);
+        // this.status[i] = !this.status[i]
+      }
+    }
+  })
+</script>
+</body>
+</html>

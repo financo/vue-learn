@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+<!--  事件调用方法没有参数，可省略小括号-->
+  <button @click="btnClick">button 1</button>
+  <button @click="btnClick()">button 1</button>
+
+<!--  事件调用方法由参数, 1按照传入值, 2不传参数时undefined, 3不写小括号传入浏览器生成的event事件-->
+  <button @click="btnClick2(123)">button 2</button>
+  <button @click="btnClick2()">button 2</button>
+  <button @click="btnClick2">button 2</button>
+
+<!--  既有用户参数，又有事件参数 的传入方式 使用 $event 传入浏览器生成的事件-->
+  <button @click="btnClick3(123, $event)">button 3</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello"
+    },
+    methods: {
+      btnClick() {
+        console.log("btnClick!")
+      },
+      btnClick2(abc) {
+        console.log("btnClick2!", abc)
+      },
+      btnClick3(abc, event) {
+        console.log("btnClick3!", abc, event)
+      },
+    }
+  })
+</script>
+</body>
+</html>
