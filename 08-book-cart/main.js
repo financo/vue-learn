@@ -46,9 +46,24 @@ const app = new Vue({
   computed: {
     totalPrice() {
       let totalPrice = 0;
-      for (let i = 0; i < this.books.length; i++){
-        totalPrice += this.books[i].price * this.books[i].count
-      }
+
+      // 普通 for 循环
+      // for (let i = 0; i < this.books.length; i++){
+      //   totalPrice += this.books[i].price * this.books[i].count
+      // }
+
+      // 第二种写法
+      // for (let i in this.books){
+      //   totalPrice += this.books[i].price * this.books[i].count
+      // }
+
+      // 第三种写法
+      // for (let i of this.books){
+      //   totalPrice += i.price * i.count
+      // }
+
+      // 第四种写法
+      totalPrice = this.books.reduce((pre, x) => {return pre + x.price * x.count}, 0);
       return totalPrice
     }
   },
