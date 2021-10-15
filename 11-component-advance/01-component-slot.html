@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+<!--  插槽的基本使用-->
+<!--  插槽默认值-->
+<!--  如果有多个值，同时放入到插槽中-->
+  <cpn></cpn>
+  <cpn><span>span</span></cpn>
+  <cpn><i>iiii</i></cpn>
+  <cpn></cpn>
+  <cpn>
+    <span>span</span>
+    <i>iiii</i>
+  </cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>I am component!</h2>
+    <p>Hello, Component</p>
+    <slot><button>Button</button></slot>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello"
+    },
+    components: {
+      cpn: {
+        template: "#cpn",
+      }
+    }
+  })
+</script>
+</body>
+</html>
