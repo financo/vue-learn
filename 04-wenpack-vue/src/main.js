@@ -21,7 +21,8 @@ document.writeln("<h2>你好，夏洛特！</h2>");
 // 使用vue开发
 import Vue from 'vue'
 
-import App from './vue/app'
+// import App from './vue/app'
+import App from './vue/App.vue'
 
 new Vue({
   el: "#app",
