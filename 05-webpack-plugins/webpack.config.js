@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js",
-    publicPath: "dist/"
+    // publicPath: "dist/"
   },
   module: {
     rules: [
@@ -64,6 +64,8 @@ module.exports = {
   },
   plugins: [
     new webpack.BannerPlugin("最终版权归wzy所有"),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "index.html"
+    })
   ]
 };
