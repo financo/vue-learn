@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Cpn from './Cpn.vue'
+  import Cpn from './Cpn'
   export default {
     name: "App",
     components: {
