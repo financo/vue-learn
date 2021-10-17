@@ -22,7 +22,14 @@ document.writeln("<h2>你好，夏洛特！</h2>");
 import Vue from 'vue'
 const app = new Vue({
   el: "#app",
+  template: `
+  <div>
+  <h2>{{message}}</h2>
+  <h2>{{name}}</h2>
+</div>
+  `,
   data: {
-    message: "Hello Vue!"
+    message: "Hello Vue!",
+    name: "MPG!!!"
   }
 });
