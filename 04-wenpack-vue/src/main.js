@@ -20,16 +20,13 @@ document.writeln("<h2>你好，夏洛特！</h2>");
 
 // 使用vue开发
 import Vue from 'vue'
-const app = new Vue({
+
+import App from './vue/app'
+
+new Vue({
   el: "#app",
-  template: `
-  <div>
-  <h2>{{message}}</h2>
-  <h2>{{name}}</h2>
-</div>
-  `,
-  data: {
-    message: "Hello Vue!",
-    name: "MPG!!!"
+  template: `<App/>`,
+  components: {
+    App
   }
 });
