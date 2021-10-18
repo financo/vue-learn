@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  {{message}}
+</div>
+
+<script src="../../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "Hello"
+    }
+  });
+
+  // 正常创建对象
+  const o = new Object();
+  o.name = "why";
+
+
+  // 字面量增强写法
+  const obj = {
+    name: "why",
+    age: 18,
+    run: function () {
+      console.log("running!")
+    },
+    eat: function () {
+      console.log("eating!")
+    }
+  };
+
+  // 属性增强写法
+  const o1 = {
+    name: "why",
+    age: 18,
+    height: 180
+  };
+  console.log("o1 -> ", o1);
+
+  const name = "why";
+  const age = 18;
+  const height = 180;
+
+  const o2 = {
+    name,
+    age,
+    height
+  };
+  console.log("o2 -> ", o2)
+
+  // 函数增强写法
+  const o3 = {
+    run: function () {
+      console.log("running!")
+    },
+    eat: function () {
+      console.log("eating!")
+    }
+  };
+
+  const o4 = {
+    run() {
+      console.log("running!")
+    },
+    eat() {
+      console.log("eating!")
+    }
+  }
+
+</script>
+
+</body>
+</html>
