@@ -11,6 +11,8 @@ const HelloWorld = () => import("../components/HelloWorld")
 const Home = () => import("../components/Home")
 const About = () => import("../components/About")
 const User = () => import("../components/User")
+const HomeNews = () => import("../components/HomeNews")
+const HomeMessage = () => import("../components/HomeMessage")
 
 Vue.use(Router)
 
@@ -21,7 +23,21 @@ const routes = [
   },
   {
     path: "/home",
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: "",
+        redirect: 'news'
+      },
+      {
+        path: "news",
+        component: HomeNews
+      },
+      {
+        path: "message",
+        component: HomeMessage
+      },
+    ]
   },
   {
     path: "/about",
