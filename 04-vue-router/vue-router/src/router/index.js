@@ -13,6 +13,7 @@ const About = () => import("../components/About")
 const User = () => import("../components/User")
 const HomeNews = () => import("../components/HomeNews")
 const HomeMessage = () => import("../components/HomeMessage")
+const Profile = () => import("../components/Profile")
 
 Vue.use(Router)
 
@@ -51,6 +52,10 @@ const routes = [
     path: "/user/:userId",
     component: User
   },
+  {
+    path: "/profile",
+    component: Profile
+  }
 ]
 
 export default new Router({

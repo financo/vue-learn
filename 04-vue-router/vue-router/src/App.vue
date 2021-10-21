@@ -11,6 +11,8 @@
     <router-link to="/home" tag="button" replace>首页</router-link>
     <router-link to="/about" tag="button" replace>关于</router-link>
     <router-link v-bind:to="'/user/'+userId" tag="button" replace>用户</router-link>
+<!--    <router-link to="/profile" tag="button" replace>Profile</router-link>-->
+    <router-link :to="{path: '/profile', query: {name: 'wzy', age: 18, height: 1.8}}" tag="button" replace>Profile</router-link>
 
 <!--    使用自定义事件-->
 <!--    <button @click="homeClick">首页</button>-->
