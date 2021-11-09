@@ -116,34 +116,34 @@ new Vue({
 
 // *********************** 5.封装 request **************************
 import {request1, request2, request3, request4} from './network/request'
-request1({
-  url: '/home/multidata'
-}, res => {
-  console.log(res)
-}, err => {
-  console.log(err)
-})
-
-
-request2({
-  baseConfig: {
-    url: '/home/multidata'
-  },
-  success: function(res){
-    console.log(res)
-  },
-  failure: function(err) {
-    console.log(err)
-  }
-})
-
-request3({
-  url: '/home/multidata'
-}).then(res => {
-  console.log(res)
-}).catch(err => {
-  console.log(err)
-})
+// request1({
+//   url: '/home/multidata'
+// }, res => {
+//   console.log(res)
+// }, err => {
+//   console.log(err)
+// })
+//
+//
+// request2({
+//   baseConfig: {
+//     url: '/home/multidata'
+//   },
+//   success: function(res){
+//     console.log(res)
+//   },
+//   failure: function(err) {
+//     console.log(err)
+//   }
+// })
+//
+// request3({
+//   url: '/home/multidata'
+// }).then(res => {
+//   console.log(res)
+// }).catch(err => {
+//   console.log(err)
+// })
 
 request4({
   url: '/home/multidata'

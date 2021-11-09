@@ -55,5 +55,20 @@ export function request4(config) {
     timeout: 5000,
   })
 
+  // 2.axios 拦截器
+  instance.interceptors.request.use(config => {
+    console.log("request success")
+    return config
+  }, err => {
+    console.log("request failure")
+  })
+
+  instance.interceptors.response.use(data => {
+    console.log("response success")
+    return data.data
+  }, error => {
+    console.log("response failure")
+  })
+
   return instance(config)
 }
