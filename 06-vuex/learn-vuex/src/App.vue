@@ -5,7 +5,12 @@
     <h2>{{$store.state.counter}}</h2>
     <button @click="add">+</button>
     <button @click="sub">-</button>
-    <div>--------------- Hello vuex ---------------</div>
+    <div>--------------- APP Getters ---------------</div>
+    <h2>{{$store.getters.powerCounter}}</h2>
+    <h2>{{$store.getters.gt12Student}}</h2>
+    <h2>{{$store.getters.gt12StudentCount}}</h2>
+    <h2>{{$store.getters.gtxStu(9)}}</h2>
+    <h3>{{gt12Student}}</h3>
     <hello-vuex/>
   </div>
 </template>
@@ -20,6 +25,11 @@
     data() {
       return {
         message: "Hello Vuex!",
+      }
+    },
+    computed: {
+      gt12Student() {
+        return this.$store.state.students.filter(x => x.age > 12)
       }
     },
     methods: {
