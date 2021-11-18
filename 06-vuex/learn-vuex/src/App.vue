@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <h2>{{message}}</h2>
-    <h2>{{counter}}</h2>
-    <button @click="counter++">+</button>
-    <button @click="counter--">+</button>
-    <div>------------------------------</div>
-    <hello-vuex :counter="counter"/>
+    <div>--------------- APP ---------------</div>
+    <h2>{{$store.state.counter}}</h2>
+    <button @click="add">+</button>
+    <button @click="sub">-</button>
+    <div>--------------- Hello vuex ---------------</div>
+    <hello-vuex/>
   </div>
 </template>
 
@@ -19,7 +20,14 @@
     data() {
       return {
         message: "Hello Vuex!",
-        counter: 0
+      }
+    },
+    methods: {
+      add() {
+        this.$store.commit("increment")
+      },
+      sub() {
+        this.$store.commit("decrement")
       }
     }
   }
