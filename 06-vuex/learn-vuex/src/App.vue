@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h2>{{message}}</h2>
+    <h2>{{counter}}</h2>
+    <button @click="counter++">+</button>
+    <button @click="counter--">+</button>
+    <div>------------------------------</div>
+    <hello-vuex :counter="counter"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import HelloVuex from "./components/HelloVuex";
+  export default {
+    name: 'App',
+    components: {
+      HelloVuex
+    },
+    data() {
+      return {
+        message: "Hello Vuex!",
+        counter: 0
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
