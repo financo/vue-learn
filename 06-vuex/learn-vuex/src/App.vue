@@ -5,6 +5,9 @@
     <h2>{{$store.state.counter}}</h2>
     <button @click="add">+</button>
     <button @click="sub">-</button>
+    <button @click="addCount(5)">+5</button>
+    <button @click="addCount(10)">+10</button>
+
     <div>--------------- APP Getters ---------------</div>
     <h2>{{$store.getters.powerCounter}}</h2>
     <h2>{{$store.getters.gt12Student}}</h2>
@@ -38,6 +41,9 @@
       },
       sub() {
         this.$store.commit("decrement")
+      },
+      addCount(count) {
+        this.$store.commit("incrementCount", count)
       }
     }
   }
