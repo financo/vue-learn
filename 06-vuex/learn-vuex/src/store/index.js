@@ -44,7 +44,13 @@ const store = new Vuex.Store({
       // Vue.delete(state.info, 'age')
     }
   },
-  actions: {},
+  actions: {
+    aUpdateInfo(context) {
+      setTimeout(() => {
+        context.commit(UPDATE_INFO)
+      }, 1000)
+    }
+  },
   getters: {
     powerCounter(state) {
       return state.counter * state.counter

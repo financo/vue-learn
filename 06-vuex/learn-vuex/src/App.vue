@@ -56,7 +56,8 @@
         this.$store.commit(ADD_STU, {id: 108, name: 'e', age: 20})
       },
       updateInfo() {
-        this.$store.commit(UPDATE_INFO)
+        // this.$store.commit(UPDATE_INFO)
+        this.$store.dispatch("aUpdateInfo")
       }
     }
   }
