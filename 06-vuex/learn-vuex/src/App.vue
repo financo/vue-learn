@@ -23,6 +23,10 @@
 
 <script>
   import HelloVuex from "./components/HelloVuex";
+  import
+  {INCREMENT, DECREMENT, INCREMENT_COUNT, ADD_STU, UPDATE_INFO}
+  from "./store/mutation-types";
+
   export default {
     name: 'App',
     components: {
@@ -40,19 +44,19 @@
     },
     methods: {
       add() {
-        this.$store.commit("increment")
+        this.$store.commit(INCREMENT)
       },
       sub() {
-        this.$store.commit("decrement")
+        this.$store.commit(DECREMENT)
       },
       addCount(count) {
-        this.$store.commit("incrementCount", count)
+        this.$store.commit(INCREMENT_COUNT, count)
       },
       addStu() {
-        this.$store.commit("addStu", {id: 108, name: 'e', age: 20})
+        this.$store.commit(ADD_STU, {id: 108, name: 'e', age: 20})
       },
       updateInfo() {
-        this.$store.commit("updateInfo")
+        this.$store.commit(UPDATE_INFO)
       }
     }
   }
