@@ -7,6 +7,7 @@
     <button @click="sub">-</button>
     <button @click="addCount(5)">+5</button>
     <button @click="addCount(10)">+10</button>
+    <button @click="addStu">Add Stu</button>
 
     <div>--------------- APP Getters ---------------</div>
     <h2>{{$store.getters.powerCounter}}</h2>
@@ -44,6 +45,9 @@
       },
       addCount(count) {
         this.$store.commit("incrementCount", count)
+      },
+      addStu() {
+        this.$store.commit("addStu", {id: 108, name: 'e', age: 20})
       }
     }
   }

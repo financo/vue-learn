@@ -24,6 +24,9 @@ const store = new Vuex.Store({
     },
     incrementCount(state, count){
       state.counter += count
+    },
+    addStu(state, stu) {
+      state.students.push(stu)
     }
   },
   actions: {},
