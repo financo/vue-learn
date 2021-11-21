@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>{{$store.state.info}}</h2>
     <div>--------------- Hello vuex ---------------</div>
     <h2>{{$store.state.counter}}</h2>
     <div>--------------- Hello vuex Getters ---------------</div>

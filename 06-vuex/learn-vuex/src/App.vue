@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h2>{{message}}</h2>
+    <h2>{{$store.state.info}}</h2>
+    <button @click="updateInfo">update info</button>
     <div>--------------- APP ---------------</div>
     <h2>{{$store.state.counter}}</h2>
     <button @click="add">+</button>
@@ -48,6 +50,9 @@
       },
       addStu() {
         this.$store.commit("addStu", {id: 108, name: 'e', age: 20})
+      },
+      updateInfo() {
+        this.$store.commit("updateInfo")
       }
     }
   }

@@ -13,7 +13,11 @@ const store = new Vuex.Store({
       {id: 101, name: 'b', age: 13},
       {id: 102, name: 'c', age: 15},
       {id: 103, name: 'd', age: 18},
-    ]
+    ],
+    info: {
+      name: 'wzy',
+      age: 28
+    }
   },
   mutations: {
     increment(state) {
@@ -27,6 +31,16 @@ const store = new Vuex.Store({
     },
     addStu(state, stu) {
       state.students.push(stu)
+    },
+    updateInfo(state) {
+      state.info.name = 'ccc'
+
+      // 响应式 / 非响应式
+      // state.info['addr'] = 'he'
+      // Vue.set(state.info, 'addr', 'he')
+
+      // delete state.info.age
+      // Vue.delete(state.info, 'age')
     }
   },
   actions: {},
